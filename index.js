@@ -27,7 +27,8 @@ function xhrRewriteHack(hostsToReplaceMap) {
 
     // If there is something to replace then replace it
     if(replacementBase) {
-      var hostNameToPath = parsedUrl.hostname.replace('.', '-');
+      var hostNameToPath = parsedUrl.hostname.replace(/\./g, '-');
+      hostNameToPath = hostNameToPath.replace(/:/g, '_');
       var pathname = parsedUrl.pathname;
       replacementUrl = _s.sprintf('%s/%s%s', 
                                   replacementBase,
@@ -37,3 +38,5 @@ function xhrRewriteHack(hostsToReplaceMap) {
     originalOpen.call(this, method, replacementUrl, async, user, password);
   };
 }
+
+module.exports = xhrRewriteHack;
