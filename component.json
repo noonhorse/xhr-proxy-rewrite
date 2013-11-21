@@ -1,0 +1,16 @@
+{
+  "name": "xhr-proxy-rewrite",
+  "repo": "virtru-components/xhr-proxy-rewrite",
+  "description": "A simple hack to rewrite xhr requests to a proxy",
+  "version": "0.0.1",
+  "development": {
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {
+    "virtru-components/underscore.string": "*",
+    "component/url": "*"
+  }
+}
